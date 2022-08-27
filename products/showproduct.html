@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show single product</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+    <div class="nav">
+        <div id="logo">
+            <a href="http://"> Dashboard </a>
+        </div>
+        <div id="adminprofile">
+            <img src="../images/person.png" alt="image">
+            <span>ahmed</span>
+            <a href="http://"> logout </a>
+        </div>
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            <div>
+                <button id="productButton" onclick="displaySidebarProductDiv()"> > products </button>
+                <ul class="d-none" id="sidebarProductUl">
+                    <li><a href="#"> All Products &nbsp; ></a></li>
+                    <li><a href="addproduct.html"> Add Products &nbsp; ></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="contentbody">
+            <div id="titleTask">
+                <p> Single Product</p>
+            </div>
+            <table id="productTable">
+                <tr>
+                    <td>ID</td>
+                    <td id="Id" ></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td id="title"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td id="price"></td>
+                </tr>
+                <tr>
+                    <td> Quantity</td>
+                    <td id="quantity"></td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td id="rate"></td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td id="category"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <td>product image</td>
+                    <td id="productImg">
+                        <img src="" alt="product">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="../js/product.js"></script>
+
+
+</body>
+
+</html>
