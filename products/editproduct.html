@@ -36,6 +36,10 @@
             </div>
             <form action="" method="get" id="editProductForm">
                 <div class="inputDiv">
+                    <label for="id"> Id </label>
+                    <input type="text" id="id" name="id" value="" disabled>
+                </div>
+                <div class="inputDiv">
                     <label for="title"> Title : </label>
                     <input type="text" id="title" name="title" value="">
                 </div>
@@ -60,12 +64,13 @@
                 <div class="inputDiv">
                     <label for="">upload image</label>
                     <label for="img"><img src="" alt="" id="imgWillEdit"></label>
-                    <input type="file" name="img" id="img" hidden>
+                    <input type="file" name="img" id="img" hidden onchange="loadImage(event)">
                 </div>
                 <div class="inputDiv">
                     <label for="description"> Description : </label>
                     <textarea name="description" id="description" cols="20" rows="5"></textarea>
                 </div>
+                <input type="submit" id="editProductButton">
 
             </form>
         </div>

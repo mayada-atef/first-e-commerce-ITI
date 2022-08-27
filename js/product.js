@@ -1,11 +1,11 @@
 class Product {
-    constructor(title,description,price,quantity,imgSrc,category,rating) {
+    constructor(title,description,price,quantity,img,category,rating) {
         this.id = Date.now();
         this.title = title;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
-        this.imgSrc = imgSrc;
+        this.img = img;
         this.category = category;
         this.rating = rating;
     }
@@ -17,14 +17,31 @@ var base64;
 var categories = ["electronics", "clothes", "jelewery", "drinks"]
 var addProductForm = document.getElementById("addProductForm");
 var productsTable = document.getElementById("productsTable");
-var tableBody=document.getElementsByTagName("tbody")[0]
+var tableBody = document.getElementsByTagName("tbody")[0];
+var editProductForm = document.getElementById("editProductForm");
 
-
+//make productObject from form input
+function makeProductObject(form) {
+    var product = new Product(form.elements["title"].value,
+        form.elements["description"].value,
+        form.elements["price"].value,
+        form.elements["quantity"].value,
+        base64,
+        form.elements["category"].value,
+        form.elements["rating"].value);
+    return product;
+}
 // display ul products in sidebar 
 function displaySidebarProductDiv() {
     sidebarProductUl.classList.toggle("d-none");      
 }
-
+// display category in select based on product category added
+function displayCategory(key) {
+    categories.forEach(element => {
+        if (key == element) {
+            return;}
+    createHtmlElment(category,"option","",element)});
+}
 // create html with text and classes 
 function createHtmlElment(parent, child, classes, text) {
     var element = document.createElement(child);
@@ -47,25 +64,7 @@ const readDataFromLocalstorage = (storageKey) => {
 const writeDateInLocalstorage = (storageKey,data) => {
     localStorage.setItem(storageKey, JSON.stringify(data));
 }
-
-/****************** add product *************************/
-
-if (addProductForm) {
-    // display category in select
-    categories.forEach(element => {
-    createHtmlElment(category,"option","",element)});
-    
-    addProductForm.addEventListener("submit", addProduct);
-}
-function addProduct() { 
-    var product =new Product(addProductForm.elements["title"].value, addProductForm.elements["description"],
-            addProductForm.elements["price"].value, addProductForm.elements["quantity"].value,base64,
-            addProductForm.elements["category"].value,addProductForm.elements["rating"].value );
-    var products = readDataFromLocalstorage("products");
-    products.push(product);
-    writeDateInLocalstorage("products",products);
-}
-//  upload product photo and display it in add product page 
+//  upload product photo and display it  
 function loadImage(event) {
     const selectedFile = event.target.files[0];
     const reader = new FileReader();
@@ -78,12 +77,27 @@ function loadImage(event) {
     };
     reader.readAsDataURL(selectedFile);
 }
+
+/****************** add product *************************/
+
+if (addProductForm) {
+    displayCategory(""); 
+    addProductForm.addEventListener("submit", addProduct);
+}
+function addProduct(e) { 
+    e.preventDefault();
+    let product=makeProductObject(addProductForm);
+    var products = readDataFromLocalstorage("products");
+    products.push(product);
+    writeDateInLocalstorage("products", products);
+    addProductForm.reset();
+}
+
 /*********************************************************/
 /******************   all products ***********************/
 /*********************************************************/
 if (productsTable) {
-    showAllProducts();
-    
+    showAllProducts();   
 }
 function showAllProducts() {
     tableBody.innerHTML = "";
@@ -102,28 +116,60 @@ function showAllProducts() {
         let editButton=createHtmlElment(operationTd, "button", "btn btnYellow", "Edit")
         let showButton=createHtmlElment(operationTd, "button", "btn btnBlue", "Show")
         deleteButton.addEventListener("click", ()=>{deleteProduct(index,products)})
-        editButton.addEventListener("click", () => { editProduct(product) })
-        showButton.addEventListener("click", () => { showProduct(product) })
+        editButton.addEventListener("click", () => { editEevent(index) })
+        showButton.addEventListener("click", () => { showEvent(index) })
        
     })
 }
+/*********************************************************/
+/******************   delete product ***********************/
+/*********************************************************/
 const deleteProduct = (index, products) => {
     products.splice(index, 1);
     writeDateInLocalstorage("products", products);
     showAllProducts(); 
 }
-
 /*********************************************************/
 /******************   edit product ***********************/
 /*********************************************************/
-editProductForm = document.getElementById("editProductForm")
-
 if (editProductForm) {
-
-    var products = readDataFromLocalstorage("products");
-    console.log(products[11]["imgSrc"]);   
-    imgWillEdit.src = products[11]["imgSrc"];
+    displayProductValues();
+    editProductForm.addEventListener("submit", editProduct);
 }
+function displayProductValues() {
+    let index =JSON.parse(localStorage.getItem("editProductIndex"));
+    let product = readDataFromLocalstorage("products")[index];
+    for (const key in product) {
+        if (key == "category") {
+            createHtmlElment(category, "option", "", product[key]);
+            displayCategory(product[key]);
+        }
+        if (key == "img") {
+            document.getElementById("imgWillEdit").src=product[key];
+            continue;
+        }
+        editProductForm.elements[key].value = product[key];     
+    }
+}
+function editEevent(index) {
+    writeDateInLocalstorage("editProductIndex",index);
+    location.href = "../products/editproduct.html";
+}
+function editProduct(e) {
+    e.preventDefault();
+    let index =JSON.parse(localStorage.getItem("editProductIndex"));
+    let products = readDataFromLocalstorage("products");
+    let product = products[index];
+    base64 = base64 || product["img"];
+    product=makeProductObject(editProductForm);
+    products[index] = product;
+    writeDateInLocalstorage("products", products);
+    editProductForm.reset();
+    Location.href = "../products/allproduct.html";
+}
+
+
+
 
 
 
