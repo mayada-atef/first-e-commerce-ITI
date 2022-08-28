@@ -62,15 +62,17 @@
                     </select>
                 </div>
                 <div class="inputDiv">
-                    <label for="">upload image</label>
+                    <label for="">upload image : </label>
                     <label for="img"><img src="" alt="" id="imgWillEdit"></label>
-                    <input type="file" name="img" id="img" hidden onchange="loadImage(event)">
+                    <input type="file" name="img" id="img" class="d-none" onchange="loadImage(event)">
                 </div>
                 <div class="inputDiv">
                     <label for="description"> Description : </label>
                     <textarea name="description" id="description" cols="20" rows="5"></textarea>
                 </div>
-                <input type="submit" id="editProductButton">
+                <div class="inputDiv">
+                    <input type="submit" class="submitButton">
+                </div>
 
             </form>
         </div>

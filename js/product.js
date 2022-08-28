@@ -19,6 +19,7 @@ var addProductForm = document.getElementById("addProductForm");
 var productsTable = document.getElementById("productsTable");
 var tableBody = document.getElementsByTagName("tbody")[0];
 var editProductForm = document.getElementById("editProductForm");
+var productTable = document.getElementById("productTable");
 
 //make productObject from form input
 function makeProductObject(form) {
@@ -167,6 +168,34 @@ function editProduct(e) {
     editProductForm.reset();
     Location.href = "../products/allproduct.html";
 }
+/*********************************************************/
+/******************   show single product ***********************/
+/*********************************************************/
+function showEvent(index) {
+      writeDateInLocalstorage("showedProductIndex",index);
+    location.href = "../products/showproduct.html";
+}
+if (productTable) {
+     let index =JSON.parse(localStorage.getItem("editProductIndex"));
+    let product = readDataFromLocalstorage("products")[index];
+    for (const key in product) {
+        let tr = createHtmlElment(productTable, "tr", "", "");
+        let td1 = createHtmlElment(tr, "td", "", key);
+        tr.append(td1);
+        if (key == "img") {
+            let tdImage = createHtmlElment(tr, "td", "", "");
+            let img = createHtmlElment(tdImage, "img", "singleProductImage", "");
+            img.src = product[key];
+            continue;  
+        }
+        let td2 = createHtmlElment(tr, "td", "", product[key]);
+        tr.append(td2);
+
+    }
+    
+}
+
+
 
 
 
