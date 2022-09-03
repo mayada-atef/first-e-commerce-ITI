@@ -1,5 +1,5 @@
 class Product {
-    constructor(title,description,price,quantity,img,category,rating) {
+    constructor(title,description,price,quantity,img,category,sale=0,rating=0,feature=0) {
         this.id = Date.now();
         this.title = title;
         this.description = description;
@@ -7,14 +7,16 @@ class Product {
         this.quantity = quantity;
         this.img = img;
         this.category = category;
+        this.sale=sale
         this.rating = rating;
+        this.feature = feature;
     }
     getProduct() {
         return this
     }
 }
 var base64;
-var categories = ["electronics", "clothes", "jelewery", "drinks"]
+// var categories = ["Mobile-Phone", "Laptop", "Tablet", "Sart-watch"]
 var addProductForm = document.getElementById("addProductForm");
 var productsTable = document.getElementById("productsTable");
 var tableBody = document.getElementsByTagName("tbody")[0];
@@ -23,25 +25,35 @@ var productTable = document.getElementById("productTable");
 
 //make productObject from form input
 function makeProductObject(form) {
+    var feature;
+    (form.elements["feature"].checked) ? feature = 1 : feature = 0;
+    console.log(form.elements["feature"].checked);
     var product = new Product(form.elements["title"].value,
         form.elements["description"].value,
         form.elements["price"].value,
         form.elements["quantity"].value,
         base64,
         form.elements["category"].value,
-        form.elements["rating"].value);
+        form.elements["sale"].value,0,feature);
+
     return product;
 }
 // display ul products in sidebar 
-function displaySidebarProductDiv() {
-    sidebarProductUl.classList.toggle("d-none");      
-}
+// function displaySidebarProductDiv() {
+//     sidebarProductUl.classList.toggle("d-none");      
+// }
+// function displaySidebarDiv(id) {
+//     let element=document.getElementById(id)
+//     element.classList.toggle("d-none");      
+// }
+
 // display category in select based on product category added
 function displayCategory(key) {
+    let categories = readDataFromLocalstorage("categories");
     categories.forEach(element => {
-        if (key == element) {
+        if (key == element.categoryName) {
             return;}
-    createHtmlElment(category,"option","",element)});
+    createHtmlElment(category,"option","",element.categoryName)});
 }
 // create html with text and classes 
 function createHtmlElment(parent, child, classes, text) {
@@ -57,14 +69,14 @@ const readDataFromLocalstorage = (storageKey) => {
        var data = JSON.parse(localStorage.getItem(storageKey))||[];  
     }
     catch (e) { throw "error in read from local storage" }
-    
     return data;
-   
 }
 // function write in local storage
 const writeDateInLocalstorage = (storageKey,data) => {
     localStorage.setItem(storageKey, JSON.stringify(data));
 }
+
+
 //  upload product photo and display it  
 function loadImage(event) {
     const selectedFile = event.target.files[0];
@@ -91,6 +103,8 @@ function addProduct(e) {
     var products = readDataFromLocalstorage("products");
     products.push(product);
     writeDateInLocalstorage("products", products);
+    let img = document.querySelector(".inputDiv img");
+    img.classList.add("d-none");
     addProductForm.reset();
 }
 
@@ -174,11 +188,14 @@ function editProduct(e) {
 function showEvent(index) {
       writeDateInLocalstorage("showedProductIndex",index);
     location.href = "../products/showproduct.html";
+    
 }
 if (productTable) {
-     let index =JSON.parse(localStorage.getItem("editProductIndex"));
+     let index =JSON.parse(localStorage.getItem("showedProductIndex"));
     let product = readDataFromLocalstorage("products")[index];
+    console.log(product);
     for (const key in product) {
+      
         let tr = createHtmlElment(productTable, "tr", "", "");
         let td1 = createHtmlElment(tr, "td", "", key);
         tr.append(td1);
@@ -194,6 +211,39 @@ if (productTable) {
     }
     
 }
+
+
+// =============================
+
+function displayProductValues() {
+    let index =JSON.parse(localStorage.getItem("editProductIndex"));
+    let product = readDataFromLocalstorage("products")[index];
+    for (const key in product) {
+        console.log(key ,product[key]);
+        if (key == "category") {
+            createHtmlElment(category, "option", "", product[key]);
+            displayCategory(product[key]);
+            continue;
+        }
+        else if (key == "img") {
+            document.getElementById("imgWillEdit").src=product[key];
+            continue;
+        }
+        else if (key == "feature") { 
+            if (product["feature"] == 1 ) {
+                let feature = document.getElementById("feature");
+                feature.checked = true;
+            }
+        }
+        else if (key == "rating") { continue; }
+        else {
+        //  console.log(key,product[key],"else");
+           editProductForm.elements[key].value = product[key]; 
+        }
+             
+    }
+}
+
 
 
 

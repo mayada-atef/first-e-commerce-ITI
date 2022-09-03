@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit product</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div id="logo">
+            <a href="../index.html"> Dashboard </a>
+        </div>
+        <div id="adminprofile">
+            <img src="../../images/person.png" alt="image">
+            <span id="adminNameIndex"></span>
+            <a href="#" class="adminlogout"> logout </a>
+        </div>
+    </header>
+    <section id="content">
+        <aside id="sidebar">
+            <details>
+                <summary> Products </summary>
+                <ul>
+                    <li><a href="./allproduct.html">All Products</a> </li>
+                    <li><a href="./addproduct.html">Add Product</a> </li>
+                </ul>
+            </details>
+            <details>
+                <summary> Category </summary>
+                <ul>
+                    <li><a href="../category/allcategory.html">All category</a> </li>
+                    <li><a href="../category/addcategory.html">Add Category</a> </li>
+                </ul>
+            </details>
+
+            <details>
+                <summary> Users </summary>
+                <ul>
+                    <li><a href="../users/allusers.html">All Users</a> </li>
+                    <!-- <li><a href="./users/addUser.html">Add user</a> </li> -->
+                </ul>
+            </details>
+            <details>
+                <summary> Carts </summary>
+                <ul>
+                    <li><a href="">All Carts</a> </li>
+                </ul>
+            </details>
+        </aside>
+        <div id="contentbody">
+            <div id="titleTask">
+                <p>Edit product</p>
+            </div>
+            <form action="" method="get" id="editProductForm">
+                <div class="inputDiv">
+                    <label for="id"> Id </label>
+                    <input type="text" id="id" name="id" value="" disabled>
+                </div>
+                <div class="inputDiv">
+                    <label for="title"> Title : </label>
+                    <input type="text" id="title" name="title" value="">
+                </div>
+                <div class="inputDiv">
+                    <label for="price"> Price :</label>
+                    <input type="text" id="price" name="price" value="">
+                </div>
+                <div class="inputDiv">
+                    <label for="quantity"> Quantity : </label>
+                    <input type="text" id="quantity" name="quantity" value="">
+                </div>
+                <div class="inputDiv">
+                    <label for="sale"> sale :</label>
+                    <input type="text" id="sale" name="sale" value="">
+                </div>
+                <div class="inputDiv">
+                    <label> feature :</label>
+                    <input type="checkbox" name="feature" id="feature" value="">
+                    <label for="feature">featured</label>
+                </div>
+                <div class="inputDiv">
+                    <label for="category"> Category : </label>
+                    <select name="category" id="category">
+
+                    </select>
+                </div>
+                <div class="inputDiv">
+                    <label for="">upload image : </label>
+                    <label for="img"><img src="" alt="" id="imgWillEdit"></label>
+                    <input type="file" name="img" id="img" class="d-none" onchange="loadImage(event)">
+                </div>
+                <div class="inputDiv">
+                    <label for="description"> Description : </label>
+                    <textarea name="description" id="description" cols="20" rows="5"></textarea>
+                </div>
+                <div class="inputDiv">
+                    <input type="submit" class="submitButton">
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <script src="../js/product.js"></script>
+    <script src="../../login.js"></script>
+</body>
+
+</html>

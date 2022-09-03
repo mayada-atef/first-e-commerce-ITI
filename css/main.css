@@ -1,0 +1,468 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Cairo", sans-serif;
+    
+}
+
+
+#container{
+ 
+    height:100%;
+    /* border:6px solid rgb(62, 211, 24); */
+}
+.header{
+   
+    background-color: #f5f5f5;
+    width:100%;
+    /* height: 100px;  */
+    /* line-height:7px;
+    text-align: center; */
+    
+}
+/* .header .header-top{
+    background-color: #434966;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 20px;
+}
+ .header .header-top .left-top
+{
+    width: 30%;
+  
+    display: inline-block;
+}
+.header .header-top .right-top {
+    width: 60%;
+    display: inline-block;
+}
+.header .header-top .right-top a{
+    padding-right: 30px;
+}
+.header .header-top .right-top label{
+    color: #8b8b8f;
+}
+.header .header-top a{
+    color: #fff;
+    text-decoration: none;
+} */
+nav{
+    width: 80%;
+    padding:15px 0px 40px 0px;
+    margin: 0px auto;
+     background-color: #f5f5f5;
+
+}
+nav .logo {
+    float: left;
+   
+    width: 30%;
+}
+nav .menu {
+    
+    width: 70%;
+    float: right;
+}
+nav .menu div{
+    display: inline;
+}
+nav li{
+    display: inline;
+    padding: 0px 5px ;
+    float: right;
+}
+nav a{
+    color: rgb(14, 5, 76);
+}
+/* Slider*/
+#slider span{
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: #7e7272;
+}
+#slider span.left-icon{
+    left: 10px;
+}
+
+#slider span.rith-icon{
+    right: 10px;
+   
+}
+
+#slider img {background-size: contain; width: 100%; height: 500px;}
+
+
+ 
+  
+
+    
+
+  
+  /* .header li:hover {
+    background: rgb(151, 150, 147);
+    height:15%;
+    padding: auto;
+    text-align: center;
+    border-radius:3px;
+  } */
+
+  /* .header ul li ul {
+    background: rgb(151, 150, 147);
+    padding: auto;
+    text-align: left;
+    position: absolute;
+    display: none;
+  }
+  
+  .header ul li:hover > ul,
+  .header ul li ul:hover {
+    display: block;
+  }
+
+  .user{
+    float:left;
+    font-size:20px;
+    font-weight:bolder;
+}
+.user span{
+    font-weight:0px; 
+} */
+  
+/* =============================================== */
+/* ========= sart Navbar ============= */
+/* =============================================== */
+
+ /* .navbar{
+    width:100%;
+    height: 31px;
+    text-align: center;
+    margin-bottom: 10px;
+} */
+
+/*  
+.navbar li,.header li a{
+    display: inline;
+    margin:10px;
+    font-size: 20px;
+    text-decoration: none;
+    
+} */
+
+.navbar ul a{
+    text-decoration: none;
+    color:#252525;
+    background-color: #ffffff;
+    /* ======= */
+    font-size: 14px;
+    color: #252525;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =============================================== */
+/* ========= Search Area ============= */
+/* =============================================== */
+
+#search{
+     /* width: 100%; */
+    height:23px;
+    padding-left: 5px;
+    border: 1px solid  rgb(14, 5, 76);
+    outline: 0;
+}
+#searchButton{
+    background-color: rgb(14, 5, 76);
+    color: #fff;
+    padding: 5px 5px ;
+    outline: 0;
+    border: 0;
+}
+nav input[type=search]{
+
+    padding: 10px;
+    outline: 0;
+    border: 0;
+   
+  
+}
+#userNameIndex,#IndexLogout,#vistorBlock li,#myCart a
+{
+    font-size: 16px;
+    
+}
+
+/* #search input[type=button]{
+    height:100%;
+    width:7%;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: auto;
+    background: #7fad39;
+    position: relative;
+    left:-7px;
+    
+} */
+/* 
+#search input[type=search],#search input[type=button]{
+    border-radius:2px;
+    border:1px solid #d5d5d5;
+} */
+
+
+
+#banar{
+    text-align: center;
+    width:100%;
+
+}
+#banar{
+    background-image:url(../imgs/banar/banner-6.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:450px;
+    margin-bottom:40px;
+}
+
+/* =============================================== */
+/* ========= Categories Area ============= */
+/* =============================================== */
+#categoris{
+   
+    width:100%;
+    text-align: center;
+}
+
+#featured{
+
+    margin-top: 20px;
+}
+
+
+#featured ul li{
+    display:inline;
+    margin-right: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #1c1c1c;
+}
+
+#product ul li{ /* show icone */
+    display: none;
+}
+#all_products:hover #product ul li{ /* show icone */
+    display: inline;
+    color:blue;
+}
+
+#all_products div{
+    text-align: center;
+    display: inline;
+    font-size: 20px;
+    font-weight:400;
+    color:16px;
+    color:black;
+    
+}
+.d-none{
+    display: none;
+}
+#fastfood{
+    display: inline;
+}
+#productByCategory ,#productsBySale, #productsByRecent,#productsByFeatured {
+    display: inline-block;
+    padding: 50px 0 ;
+    text-align: center;
+    width: 100%;
+}
+
+div #all_products{
+    float:left;
+    height:270px;;
+    /* border: 2px solid red; */
+    margin-left:30px;
+    margin-top:50px;
+    margin-bottom:30px;
+
+}
+#product_name h6 a{
+    text-decoration: none;
+    /* border: 2px solid royalblue; */
+    font-size:16px;
+    color:#252525;
+    font-weight: 400;
+
+}
+
+#product img{
+    width:270px;
+    height:270px;
+    background-size: cover;
+}
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+#footer{
+    background-color: #f5f5f5;
+    padding: 20px;
+   position: relative;
+   margin-top: 20px;
+   font-size: 20px;
+   border-radius: 60px 60px 0 0;
+ 
+  
+}
+#footer li , #footer p ,#footer a {
+     padding: 10px;
+     list-style: none;
+     color: #6a1a8b;;
+     
+    
+}
+#footerBlock1,#footerBlock2,#footerBlock3
+{
+
+   width: 30%;
+display: inline-block;
+
+}
+#footerBlock3 {
+    width: 32%;
+    padding: 15px;
+
+}
+#formSection{
+background-color: #eee;
+
+}
+#formSectionimg {
+display: inline-block;
+width: 50%;
+}
+#formSectionimg img{
+width: 80%;
+height: 320px;
+}
+#formSectionInfo{
+width: 40%;
+display: inline-block;
+}
+#formSectionInfo textarea {
+
+   height: 156px;
+width: 509px;
+}
+#formSectionInfo input{
+border: 1px solid black;
+height: 25px;
+}
+#formSectionInfo button{
+height: 40px;
+background-color: #ff0000;
+margin-bottom: 20px;
+color: #fff;
+border: 1px solid #fff;
+}
+#footer-nav{
+background-color: #434966;;
+color: #fff;
+margin: auto;
+text-align: center;
+padding: 5px;
+
+}
+#footer-nav p {
+margin: 0px;
+}
+li , a , p {
+    text-decoration: none;
+}
+
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+ .saleobanner{
+    background-size: cover;
+        height: 400px;
+        width: 100%;
+}
+
+.ShoplessSection {
+    background-image:url('../images/parallax1-1-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    transform: translate3d(0px, -14.2593px, 0px);
+    position: relative;
+    width: 100%;
+    margin: 30px 0 ;
+
+}
+.ShoplessSection .decShoplessSection
+{
+    position: absolute;
+    top:30%;
+    width: 40%;
+    padding: 50px;
+}
+.btnShopLess {
+
+    padding: 8px;
+    margin: 40px 0;
+    background: #434966;
+    border: 2px solid #000;
+    border-radius: 20px;
+    color: #fff;
+    width: 35%;
+}
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
+
+/* =============================================== */
+/* =========             ============= */
+/* =============================================== */
+
