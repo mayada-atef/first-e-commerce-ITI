@@ -1,217 +1,146 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-    
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-        type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css" integrity="sha512-R+xPS2VPCAFvLRy+I4PgbwkWjw1z5B5gNDYgJN5LfzV4gGNeRQyVrY7Uk59rX+c8tzz63j8DeZPLqmXvBxj8pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online shopping</title>
 
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/main.css">
-    <!-- <link rel="stylesheet" href="admin/css/style.css"> -->
-
 </head>
 
 <body>
-    <div id="container">
-    <div id='header' class="header">
-    
-        <!-- <div class="header-top">
-                    <div class="left-top">
-                        <div class="socials">
-                            <a clas="socials-item" href="#" title="facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                            <a clas="socials-item" href="#" title="Twitter">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                            <a clas="socials-item" href="#" title="Instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a clas="socials-item" href="#" title="Pinterest">
-                                <i class="fa-brands fa-pinterest"></i>
-                            </a>
-                        </div>
-                          
-                    </div>
-                    <div class="right-top">
-                        <div class="contact-info">
-                            <label> Email:</label>
-                            <a clas="contact-item" href="mailto:mohamedmahmoudeg.com" title="mail">
-                              
-                                info@mohamedmahmoudeg.com
-                            </a>
-                            <label>Phone:</label>
-                            <a clas="contact-item" href="tel:01003209935" title="phone">
-                                
-                                01003209935
-                             </a>
-                           
-                        </div>
-                          
-                    </div>
-    
-                </div> -->
-        <nav>
-            <!-- Nav bar elements  -->
-    
-            <div class="logo">
-                <a href="index.html">
-                    <h2>Online Shopping</h2>
-                </a>
-            </div>
-    
-            <div class="menu">
-                <ul class="menu-item">
-                    <li class="d-none" id="myCart">
-                        <a href="pages/cart.html">
-                            <i class="fa fa-shopping-cart"></i> myCart
-                        </a>
-                    </li>
-                    <!-- Nav bar elements  -->
-    
-                    <li> <span id="userNameIndex" class="d-none"></span></li>
-                    <li>
-                        <a href="#">
-                            <span id="IndexLogout" class="d-none userlogout">Logout</span>
-                        </a>
-                    </li>
-    
-                    <!-- <input type="button" name="Search" value="Search" id="search_btn"> -->
-                    <span id="vistorBlock">
-                        <li><a href="register.html">Register</a></li>
-                        <!-- <li><a href="./admin/login.html">Login as Admin</a></li> -->
-                        <li><a href="./login.html"> Login</a></li>
-                    </span>
-                    <li>
-                        <input type="text" id="search" value="" name="search" placeholder="search for any product"><input
-                            type="button" value="Go" id="searchButton" onclick="searchPage()">
-                        <!-- ============ search ============= -->
-    
-    
-                    </li>
-    
-                </ul>
+
+    <section id="section1">
+        <nav class="navbar navbar-expand-lg bg-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Online Shopping</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex mx-auto" role="search">
+                        <input class="form-control me-2" type="search" id="search" value="" name="search"
+                            placeholder="Search" aria-label="Search">
+                        <input type="button" class="btn btn-outline-success" value="search" id="searchButton"
+                            onclick="searchPage()">
+                    </form>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-us">About us </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center d-none" id="myCart">
+                            <i class="bi bi-cart4"></i><a class="nav-link px-0" href="pages/cart.html"><i
+                                    class="fa fa-shopping-cart"></i>
+                                myCart</a>
+                        </li>
+                        <span id="vistorBlock" class="d-flex">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ms-2 text-light" href="./login.html"> Sign In </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ms-2 text-light" href="./register.html"> Register
+                                </a>
+                            </li>
+                        </span>
+                        <li class="nav-item">
+                            <span id="userNameIndex" class=" nav-link disabled d-none"></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link btn btn-danger text-light ms-2 d-none userlogout" id="IndexLogout"> Log
+                                out </a>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </nav>
-    </div>
-     
-        <div id="slider">
-           
-            <!-- <span onclick="next()" class="left-icon"> -->
-                <!-- <i class="fa-solid fa-circle-chevron-left"></i></span> -->
-            <!-- <span onclick="pre()" class="rith-icon"><i class="fa-solid fa-circle-chevron-right"></i></span> -->
-            <!-- <img src=""> -->
-         
-           
-          </div>
-        <!-- End section Header  -->
-          <hr>
-    <section id="productByCategory">
-        <!-- <div id="categoris">
-            <div>
-                <h2>Products By Category</h2>
-            </div>
-            <div id="featured">
-                <ul id="cat_list">
-                    <li onclick="show_products_data('products','products_container')">All</li>
-                </ul>
-            </div>
-        </div> -->
-        <!-- ====================== product with images ==================== -->
-        <div id="products_container" class="products_container">
-            <!--show product here from js -->
-        
-        </div><!-- end div container   -->
-   
+       
+        </header>
+
+
     </section>
-        
-        <!-- <section id="productsBySale">
-            <h2>Sale Products</h2>
-            <img class="saleobanner" src="./images/shop14_home_parallax1.png" alt="">
-
-                <div id="productsContainerBySale" class="products_container">
-
-                    
-                </div>
+    <section id="productSection" class="py-5">
+        <div class="container">
+            <div class="row my-5" id="searchResult">
             
-            
-        </section>  -->
-         <!-- <section id="productsByFeatured">
-            <h2>Featured products</h2>
-            <div id="productsContainerByFeatured" class="products_container">
-
             </div>
 
-        </section> -->
-        <!-- <section class="ShoplessSection">
-                <div class="decShoplessSection">
-                    <h2>Shop now for less</h2>
-                    <br><br>
-                    <p>There are only a few smartwatches that are worth your money. Find the one that's just for you right here.</p>
-                    <button class="btnShopLess">View Products</button>
+        </div>
+    </section>
+
+    <footer id="about-us">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="logo-text">Lissome</h4>
+                        <p>Praesent vulputate neque nec sem fermentum porttitor. Mauris eget dolor convallis, trista,
+                            dignissim sapien. Duis vel
+                            felis dictu
+                        </p>
+                        <div class="social-icons">
+                            <a href=""><i class='bi bi-facebook'></i></a>
+                            <a href=""><i class='bi bi-twitter'></i></a>
+                            <a href=""><i class='bi bi-instagram'></i></a>
+                            <a href=""><i class='bx bi-github'></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="title-sm">NAVIGATION</h5>
+                        <div class="footer-links"><a href="">Services</a>
+                            <a href="">Our Work</a>
+                            <a href="">team</a>
+                            <a href="">blog</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <h5 class="title-sm">more</h5>
+                        <div class="footer-links">
+                            <a href="">FAQ's</a>
+                            <a href="">Privacy & Policy</a>
+                            <a href="">Liscences</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="title-sm">contact </h5>
+                        <p class="mb-2">1649 Norman Street, Los Angeles, 9001</p>
+                        <p class="mb-2">8(800)316-06-42</p>
+                        <p class="mb-2">hello@yourdomain.com</p>
+                    </div>
                 </div>
-        </section> -->
-        <div id="productsByRecent">
-            <!-- <h2>Recent products</h2> -->
-            <div id="productsContainerByRecent" class="products_container">
-
-            </div>
-
-        </div>
-        <br> <br> <br>
-    
-        <footer id="footer">
-            <div id="footerBlock1">
-                <img src="./images/SP-563.png" style="width:350; height:150px">
-            </div>
-            <div id="footerBlock2"> 
-                <h3>Pages</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">products</a></li>
-                    <li><a href="#">sales</a></li>
-                    <li><a href="#">Categories</a></li>
-    
-                </ul>
-            </div>
-            <div id="footerBlock3">
-                <h3>Contact Us </h3>
-               <div>
-                   <P>Adress: ITI Menofia Branch</P>
-                   <P>Moblie: <a href='tel:01003209935'>01003209935</a></P>
-                   <P>Email: <a href="mailto:info@mohamedmahmoudeg.com">
-                    info@mohamedmahmoudeg.com</a></P>
             </div>
         </div>
-        </div>
-        <div id="footer-nav">
-            <div>
-                <p>2022 © All Rights Reserved</p>
-            </div>
-            <div id=footer-socials>
-                <a href="facebook"><i></i></a>
-                <a href="facebook"><i></i></a>
-                <a href="facebook"><i></i></a>
-                <a href="facebook"><i></i></a>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-6">
+                        <p> ©copy rights. All rights reserved</p>
+                    </div>
+                    <div class="col-auto">
+                        <p> created with </p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-        <!-- <script src="js/main.js"></script> -->
-        <script src="login.js"></script>
-        <script src="js/searcproduct.js"></script>
-
-        
-
+    <script src="js/searcproduct.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
-

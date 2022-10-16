@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+   
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-expand-lg">
+    <div class="container ">
+      <a class="navbar-brand" href="#">Online Shopping</a>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <!-- ms=margin start -->
+        <ul class="navbar-nav ms-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+          </li> -->
+          <!-- home -->
+          <li class="nav-item">
+            <a class="pages nav-link fas fa-home mr-3" href="#"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="pages nav-link fa-brands fa-product-hunt" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="pages nav-link fa-brands fa-salesforce" href="#">Sales</a>
+          </li>
+         <!-- cart -->
+          <li class="nav-item">
+             <!-- <i class="fa fa-shopping-cart"></i> -->
+            <a class="pages nav-link fa fa-shopping-cart" href="#"></a>
+          </li>
+         
+          <!-- 
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <i class="fa-brands fa-product-hunt"></i>
+        <i class="fa-brands fa-salesforce"></i>
+            <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">link1</a></li>
+              <li><a class="dropdown-item" href="#">link2</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul> -->
+          </li>
+          <li class="nav-item active">
+            <a class="pages nav-link fa-solid fa-right-to-bracket" href="#">Logout <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid ">
+    <div class="row">  
+      <div class="col-12 mypic"></div>
+    </div>
+
+
+<!-----------------------------------------------      table      .............................................................................. -->
+
+
+  </div>
+
+  <div class="container">
+    <div class="mytable col-12">
+  
+      <table class="table border-1 m-2">
+        <thead class="thead-dark">
+          <tr class="tableheader">
+            <th scope="col">#</th>
+            <th scope="col">Products</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quntity</th>
+            <th scope="col">Total</th>
+            <th scope="col">Remove Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td> <button class="addOne"><i class="fa-solid fa-plus"></i></button>
+              5
+              <button class="minusOne"><i class="fa-solid fa-minus"></i></button>
+            </td>
+            <td>9</td>
+            <td><input type="button" value="Delete"></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>4</td>
+            <td>4</td>
+            <td><input type="button" value="Delete"></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+            <td>5</td>
+            <td>7</td>
+            <td><input type="button" value="Delete"></td>
+            
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">#</th>
+            <th colspan="3">Cart Total</td>
+            <th colspan="2">$180</td>
+          </tr>
+        </tfoot>
+      </table>
+    
+    </div>
+    
+  </div>
+  
+  <!-----------------------------------------------      Footer      .............................................................................. -->
+
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #45526e"
+          >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              About Us
+            </h6>
+            <p>
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+             
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="links col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Categories</h6>
+            <p>
+              <a class="text-white">Category 1</a>
+            </p>
+            <p>
+              <a class="text-white">Category 2</a>
+            </p>
+            <p>
+              <a class="text-white">Category 3</a>
+            </p>
+            <p>
+              <a class="text-white">Category 4</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- <hr class="w-100 clearfix d-md-none" />
+
+         
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="links col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact WITH US</h6>
+            <p><i class="fas fa-home mr-3"></i> ITI Menofia Branch</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+             ITI © 2022 Copyright:
+              
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!-- Facebook -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/all.min.js"></script>    
+</body>
+</html>

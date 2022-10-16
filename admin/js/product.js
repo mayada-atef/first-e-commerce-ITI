@@ -1,5 +1,5 @@
 class Product {
-    constructor(title,description,price,quantity,img,category,sale=0,rating=0,feature=0) {
+    constructor(title,description,price,quantity,img,category,sale=0,rating=4,feature=0) {
         this.id = Date.now();
         this.title = title;
         this.description = description;
